@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e8ede3">
+<title>Aura Beauty Lounge | Natural Beauty, Timeless Elegance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Italiana&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{
+ --sage:#82947b;--sage-dark:#52664f;--sage-light:#e8ede3;
+ --ivory:#faf9f5;--white:#fffefa;--ink:#303b30;
+ --muted:#777c70;--line:#e1e4d9;--beige:#eee8dc;
+ --serif:"Playfair Display",serif;--sans:"DM Sans",sans-serif;
+ --shadow:0 18px 50px #34483212;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:var(--sans);background:var(--ivory);color:var(--ink);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+::selection{background:#d7e0d0;color:var(--sage-dark)}
+.container{width:min(1160px,91%);margin:auto}
+section{padding:95px 0}
+h1,h2,h3{font-weight:400;line-height:1.2}
+h2{font:400 clamp(34px,4vw,51px)/1.2 var(--serif)}
+h2 em,h1 em{font-weight:400;color:var(--sage-dark)}
+p{color:var(--muted)}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--sage-dark);font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:700}
+.eyebrow:before{content:"";width:25px;height:1px;background:var(--sage)}
+.heading{text-align:center;max-width:650px;margin:0 auto 42px}
+.heading .eyebrow{justify-content:center}
+.heading .eyebrow:after{content:"";width:25px;height:1px;background:var(--sage)}
+.heading p{font-size:12px;max-width:500px;margin:13px auto 0}
+.script{font:clamp(30px,4vw,43px) "Italiana",serif;color:var(--sage-dark)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;background:var(--sage-dark);color:white;border:1px solid var(--sage-dark);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;transition:.3s}
+.btn:hover{background:var(--ink);border-color:var(--ink);transform:translateY(-3px)}
+.btn-outline{background:transparent;color:var(--sage-dark)}
+.btn-outline:hover{color:white}
+.topline{background:var(--sage-dark);color:white;text-align:center;padding:8px;font-size:9px;letter-spacing:2px}
+header{height:82px;position:sticky;top:0;z-index:100;background:#faf9f5ed;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-mark{width:42px;height:42px;border:1px solid var(--sage);display:grid;place-items:center;border-radius:50%;color:var(--sage-dark);font:26px var(--serif)}
+.brand-name{font:25px var(--serif);line-height:1.1;letter-spacing:1px}
+.brand-sub{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--sage-dark)}
+.navlinks{display:flex;gap:24px;align-items:center}
+.navlinks a{font-size:9px;text-transform:uppercase;letter-spacing:1px;transition:color .2s}
+.navlinks a:hover{color:var(--sage)}
+.menu{display:none;background:none;border:1px solid var(--line);width:40px;height:40px;color:var(--sage-dark)}
+/* Hero */
+.hero{padding:0;background:var(--sage-light);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:610px}
+.hero-copy{padding:75px 0;position:relative;z-index:2}
+.hero h1{font:clamp(52px,6vw,80px)/1.05 var(--serif);letter-spacing:-2px;margin:16px 0}
+.hero h1 em{display:block;font-style:italic}
+.hero-copy>p{max-width:425px;font-size:12px;line-height:2}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:32px;font-size:10px;color:var(--sage-dark)}
+.hero-meta i{margin-right:6px}
+.hero-visual{position:relative;height:610px;padding:24px 0 0 30px}
+.hero-visual>img{height:100%;object-position:center 35%;border-radius:220px 220px 0 0}
+.image-label{position:absolute;bottom:36px;left:0;background:var(--white);padding:19px 24px;box-shadow:var(--shadow);max-width:225px}
+.image-label span{font:italic 24px var(--serif);display:block}
+.image-label small{font-size:9px;letter-spacing:1px;color:var(--muted)}
+.hero-deco{position:absolute;right:0;top:14%;font:80px var(--serif);color:#82947b50;animation:float 5s ease-in-out infinite}
+/* trust strip */
+.trust{background:var(--white);border-bottom:1px solid var(--line);padding:25px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.trust-item{display:flex;justify-content:center;align-items:center;gap:12px}
+.trust-item i{color:var(--sage-dark);font-size:19px}
+.trust-item strong{display:block;font-size:10px;font-weight:600}
+.trust-item span{display:block;font-size:9px;color:var(--muted)}
+/* About */
+.about{background:var(--ivory)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:75px}
+.about-visual{position:relative;padding:0 28px 28px 0}
+.about-visual img{height:480px;position:relative;z-index:1}
+.about-visual:after{content:"";position:absolute;inset:25px 0 0 25px;border:1px solid var(--sage)}
+.about-stamp{position:absolute;z-index:2;right:-8px;bottom:48px;width:112px;height:112px;border-radius:50%;background:var(--sage-dark);color:white;display:grid;place-content:center;text-align:center;font:24px var(--serif)}
+.about-stamp small{font:8px var(--sans);letter-spacing:1px;text-transform:uppercase}
+.about-copy h2{margin:17px 0}
+.about-copy>p{font-size:12px;line-height:2;margin:14px 0}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:25px 0}
+.checks span{font-size:10px}
+.checks i{color:var(--sage-dark);margin-right:8px}
+/* Services */
+.services{background:#fff}
+.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.filter{padding:9px 16px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:9px;transition:.25s}
+.filter.active,.filter:hover{background:var(--sage-dark);color:white;border-color:var(--sage-dark)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{border:1px solid var(--line);background:var(--ivory);transition:.35s}
+.service:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.service.hidden{display:none}
+.service-photo{height:225px;overflow:hidden;position:relative}
+.service-photo img{height:100%;transition:transform .7s}
+.service:hover .service-photo img{transform:scale(1.06)}
+.service-tag{position:absolute;left:12px;top:12px;background:var(--ivory);padding:6px 10px;font-size:8px;letter-spacing:1px;text-transform:uppercase}
+.service-content{padding:21px}
+.service-content h3{font:25px var(--serif);margin-bottom:8px}
+.service-content p{font-size:10px;line-height:1.9;min-height:39px}
+.service-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:15px;margin-top:17px;gap:10px}
+.price{font:23px var(--serif);color:var(--sage-dark)}
+.price small{font:9px var(--sans);color:var(--muted)}
+.book-service{border:0;background:none;color:var(--sage-dark);font-size:9px;font-weight:700}
+.book-service:hover{text-decoration:underline}
+.small-note{text-align:center;font-size:9px;margin-top:20px}
+/* promo */
+.promo{background:var(--sage-dark);color:white;padding:23px 0;overflow:hidden}
+.promo-track{display:flex;gap:40px;width:max-content;white-space:nowrap;animation:marquee 28s linear infinite}
+.promo-track span{font:25px var(--serif)}
+.promo-track i{color:#cdd9c6;margin:0 15px;font-size:13px}
+/* gallery */
+.gallery{background:var(--beige)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:12px}
+.gallery-item{border:0;padding:0;overflow:hidden;position:relative;background:var(--sage-light)}
+.gallery-item:first-child{grid-row:span 2}
+.gallery-item:nth-child(4){grid-row:span 2}
+.gallery-item img{height:100%;transition:transform .6s}
+.gallery-item:hover img{transform:scale(1.07)}
+.gallery-item:after{content:"+";position:absolute;right:12px;bottom:12px;background:var(--white);color:var(--sage-dark);width:34px;height:34px;display:grid;place-items:center;opacity:0;transition:.25s;font-size:21px}
+.gallery-item:hover:after{opacity:1}
+.lightbox{position:fixed;inset:0;background:#182017ed;z-index:300;display:none;align-items:center;justify-content:center;padding:25px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:84vh;width:auto;height:auto}
+.lightbox button{position:absolute;right:25px;top:20px;border:0;background:white;color:var(--ink);width:43px;height:43px;font-size:23px}
+/* packages */
+.packages{background:var(--ivory)}
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.package{background:var(--white);border:1px solid var(--line);padding:30px;position:relative;transition:.3s}
+.package:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.package.featured{border-color:var(--sage);background:#f1f4ed}
+.package-icon{width:44px;height:44px;display:grid;place-items:center;background:var(--sage-light);color:var(--sage-dark);border-radius:50%}
+.package h3{font:27px var(--serif);margin:19px 0 7px}
+.package>p{font-size:10px;min-height:37px}
+.package-price{font:37px var(--serif);color:var(--sage-dark);margin:17px 0}
+.package-price small{font:9px var(--sans);color:var(--muted)}
+.package ul{list-style:none;display:grid;gap:11px;margin:20px 0 25px}
+.package li{font-size:10px;color:var(--muted)}
+.package li i{color:var(--sage-dark);margin-right:8px}
+.package .btn{width:100%}
+.featured-label{position:absolute;right:15px;top:15px;font-size:8px;letter-spacing:1px;text-transform:uppercase;color:var(--sage-dark)}
+/* testimonials */
+.reviews{background:#fff}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{border:1px solid var(--line);padding:26px;background:var(--ivory)}
+.stars{color:#a28b5c;letter-spacing:3px;font-size:12px}
+.review blockquote{font:italic 19px/1.7 var(--serif);margin:18px 0 23px}
+.reviewer{border-top:1px solid var(--line);padding-top:15px;font-size:10px}
+.reviewer span{display:block;color:var(--muted);font-size:9px}
+/* Booking */
+.booking{background:var(--sage-light)}
+.booking-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+.booking-copy h2{margin:18px 0}
+.booking-copy>p{font-size:12px;line-height:2}
+.contact-line{display:flex;gap:13px;margin-top:24px}
+.contact-line i{color:var(--sage-dark);margin-top:4px}
+.contact-line strong{display:block;font-size:10px}
+.contact-line span{font-size:10px;color:var(--muted)}
+.booking-form{background:var(--white);padding:clamp(22px,4vw,38px);box-shadow:var(--shadow)}
+.booking-form h3{font:31px var(--serif)}
+.booking-form>p{font-size:10px;margin:7px 0 22px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:white;padding:12px;font-size:11px;color:var(--ink);outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--sage)}
+.field textarea{min-height:80px;resize:vertical}
+.booking-form .btn{width:100%;margin-top:18px}
+.form-note{text-align:center;font-size:9px;margin-top:10px}
+#formStatus{font-size:10px;color:var(--sage-dark);margin-top:10px}
+/* footer */
+footer{background:#29362a;color:white;padding:55px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:30px;padding-bottom:35px}
+.footer-brand .brand-name{color:white}
+.footer-brand p{font-size:10px;color:#c7d0c3;margin-top:16px;max-width:260px}
+.footer-title{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#d1dec9;margin-bottom:17px}
+.footer-links{list-style:none;display:grid;gap:10px}
+.footer-links a{font-size:10px;color:#d7ded4}
+.footer-links a:hover{color:white}
+.socials{display:flex;gap:9px;margin-top:17px}
+.socials a{width:34px;height:34px;border:1px solid #738271;border-radius:50%;display:grid;place-items:center}
+.socials a:hover{background:white;color:var(--sage-dark)}
+.footer-bottom{border-top:1px solid #53624f;padding-top:18px;display:flex;justify-content:space-between;gap:15px;font-size:9px;color:#c7d0c3}
+.float-wa{position:fixed;right:20px;bottom:20px;z-index:90;width:53px;height:53px;display:grid;place-items:center;border-radius:50%;background:#25d366;color:white;font-size:26px;box-shadow:0 6px 22px #0002;transition:.25s}
+.float-wa:hover{transform:scale(1.08)}
+.backtop{position:fixed;left:20px;bottom:20px;z-index:90;width:40px;height:40px;border:1px solid var(--line);background:white;color:var(--sage-dark);display:grid;place-items:center;opacity:0;pointer-events:none;transition:.25s}
+.backtop.show{opacity:1;pointer-events:auto}
+/* animation */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(4deg)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+@media(max-width:1000px){
+ .navlinks{gap:13px}.navlinks a{font-size:8px}.nav>.btn{font-size:8px;padding:12px}
+ .about-grid{gap:40px}.booking-grid{gap:30px}.footer-grid{gap:20px}
+}
+@media(max-width:760px){
+ .topline{font-size:8px;letter-spacing:1px}
+ header{height:72px}.brand-name{font-size:22px}
+ .menu{display:grid;place-items:center}
+ .nav>.btn{display:none}
+ .navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:var(--ivory);padding:15px 5% 22px;box-shadow:0 12px 25px #0001;flex-direction:column;align-items:stretch;gap:0}
+ .navlinks.open{display:flex}.navlinks a{font-size:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+ .hero-grid{grid-template-columns:1fr}.hero-copy{padding:60px 0 35px}.hero h1{font-size:62px}
+ .hero-visual{height:450px;padding:0 0 0 15px}.hero-visual>img{border-radius:180px 180px 0 0}
+ .image-label{left:0;bottom:25px}.hero-deco{font-size:60px;right:0}
+ .trust-grid{grid-template-columns:1fr 1fr;gap:20px 10px}.trust-item{justify-content:flex-start}
+ section{padding:72px 0}
+ .about-grid{grid-template-columns:1fr;gap:38px}.about-visual{max-width:520px;width:calc(100% - 15px)}.about-visual img{height:420px}
+ .service-grid{grid-template-columns:1fr 1fr;gap:12px}.service-photo{height:170px}.service-content{padding:14px}
+ .service-content h3{font-size:22px}.service-content p{font-size:10px}.service-bottom{align-items:flex-start;flex-direction:column}
+ .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:160px;gap:8px}.gallery-item:first-child,.gallery-item:nth-child(4){grid-row:span 1}
+ .package-grid,.review-grid{grid-template-columns:1fr}
+ .booking-grid{grid-template-columns:1fr;gap:35px}
+ .footer-grid{grid-template-columns:1fr 1fr;gap:28px 18px}
+ .footer-bottom{flex-direction:column}
+}
+@media(max-width:390px){
+ .container{width:92%}.hero h1{font-size:53px}
+ .service-photo{height:140px}.service-content{padding:11px}.service-content h3{font-size:19px}
+ .service-bottom{gap:6px}.price{font-size:20px}
+ .form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+ .gallery-grid{grid-auto-rows:135px}
+}
+</style>
+</head>
+<body>
+
+<div class="topline">A SPACE TO UNWIND · A MOMENT TO FEEL LIKE YOU</div>
+
+<header>
+ <nav class="nav container">
+  <a class="brand" href="#home">
+   <span class="brand-mark">A.</span>
+   <span><span class="brand-name">AURA</span><br><span class="brand-sub">Beauty Lounge</span></span>
+  </a>
+  <div class="navlinks" id="navlinks">
+   <a href="#home">Home</a><a href="#about">Our Story</a><a href="#services">Services</a>
+   <a href="#gallery">Gallery</a><a href="#packages">Packages</a><a href="#contact">Contact</a>
+  </div>
+  <a class="btn" href="#contact">Book a Visit <i class="fa-solid fa-arrow-right"></i></a>
+  <button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+ </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="hero-copy">
+   <div class="script">The art of feeling beautiful</div>
+   <h1>Less, but<br><em>more beautiful.</em></h1>
+   <p>A thoughtful beauty experience inspired by nature, simplicity and you. Discover personalised treatments, effortless elegance and a little time just for yourself.</p>
+   <div class="actions">
+    <a class="btn" href="#services">Explore Treatments <i class="fa-solid fa-arrow-right"></i></a>
+    <a class="btn btn-outline" href="#about">Discover Aura</a>
+   </div>
+   <div class="hero-meta"><span><i class="fa-solid fa-leaf"></i> Thoughtful beauty</span><span><i class="fa-regular fa-heart"></i> Personalised care</span></div>
+  </div>
+  <div class="hero-visual">
+   <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1100&q=85" alt="Beauty portrait and natural makeup inspiration">
+   <div class="image-label"><span>Beauty, naturally.</span><small>YOUR TIME. YOUR AURA.</small></div>
+   <div class="hero-deco">✳</div>
+  </div>
+ </div>
+</section>
+
+<div class="trust">
+ <div class="container trust-grid">
+  <div class="trust-item"><i class="fa-solid fa-spa"></i><div><strong>Calm Experience</strong><span>A moment to unwind</span></div></div>
+  <div class="trust-item"><i class="fa-solid fa-leaf"></i><div><strong>Personalised Care</strong><span>Made around you</span></div></div>
+  <div class="trust-item"><i class="fa-regular fa-gem"></i><div><strong>Premium Touch</strong><span>Details that matter</span></div></div>
+  <div class="trust-item"><i class="fa-regular fa-calendar-check"></i><div><strong>Easy Booking</strong><span>Plan your visit</span></div></div>
+ </div>
+</div>
+
+<section class="about" id="about">
+ <div class="container about-grid">
+  <div class="about-visual reveal">
+   <img loading="lazy" src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=85" alt="Peaceful spa setting with soft natural details">
+   <div class="about-stamp">Feel good<small>from within</small></div>
+  </div>
+  <div class="about-copy reveal">
+   <span class="eyebrow">A little about us</span>
+   <h2>Beauty with a<br><em>softer touch.</em></h2>
+   <p>At Aura Beauty Lounge, beauty is personal. Our philosophy is simple: create a welcoming space where you can pause, recharge and feel confident in your own way.</p>
+   <p>From a refreshing facial to your dream bridal look, each visit is designed around your preferences, your comfort and your special moments.</p>
+   <div class="checks">
+    <span><i class="fa-solid fa-check"></i> Personal consultations</span>
+    <span><i class="fa-solid fa-check"></i> Relaxing ambience</span>
+    <span><i class="fa-solid fa-check"></i> Thoughtful treatments</span>
+    <span><i class="fa-solid fa-check"></i> Occasion-ready glam</span>
+   </div>
+   <a class="btn" href="#contact">Meet Your Beauty Moment <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+ </div>
+</section>
+
+<section class="services" id="services">
+ <div class="container">
+  <div class="heading reveal">
+   <span class="eyebrow">The treatment menu</span>
+   <h2>Your beauty ritual,<br><em>your way.</em></h2>
+   <p>Explore our treatments, from skin-refreshing facials to occasion makeup, hair styling and a little well-deserved self-care.</p>
+  </div>
+  <div class="filters reveal">
+   <button class="filter active" data-filter="all">All Services</button>
+   <button class="filter" data-filter="skin">Facials & Skin</button>
+   <button class="filter" data-filter="makeup">Makeup</button>
+   <button class="filter" data-filter="hair">Hair</button>
+   <button class="filter" data-filter="nails">Nails</button>
+   <button class="filter" data-filter="body">Body & Spa</button>
+   <button class="filter" data-filter="bridal">Bridal</button>
+  </div>
+  <div class="service-grid">
+   <article class="service reveal" data-category="skin">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=85" alt="Facial treatment"><span class="service-tag">Skin ritual</span></div>
+    <div class="service-content"><h3>Signature Facial</h3><p>A refreshing cleanse and hydration-focused facial for a fresh, comfortable feel.</p><div class="service-bottom"><span class="price">Rs. 2,500</span><button class="book-service" data-service="Signature Facial">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="skin">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=700&q=85" alt="Skincare products"><span class="service-tag">Skin ritual</span></div>
+    <div class="service-content"><h3>Deep Skin Care</h3><p>A tailored skincare session with cleansing, exfoliation and nourishing hydration.</p><div class="service-bottom"><span class="price">Rs. 3,500</span><button class="book-service" data-service="Deep Skin Care">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="makeup">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85" alt="Professional makeup artistry"><span class="service-tag">Makeup</span></div>
+    <div class="service-content"><h3>Soft Glam</h3><p>Fresh skin, softly defined eyes and a polished look for your special occasion.</p><div class="service-bottom"><span class="price">Rs. 3,500</span><button class="book-service" data-service="Soft Glam Makeup">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="makeup">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=85" alt="Glamorous makeup look"><span class="service-tag">Makeup</span></div>
+    <div class="service-content"><h3>Party Makeup</h3><p>A customised glam look for celebrations, dinners, events and photo moments.</p><div class="service-bottom"><span class="price">Rs. 4,000</span><button class="book-service" data-service="Party Makeup">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="hair">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=700&q=85" alt="Salon hair styling"><span class="service-tag">Hair studio</span></div>
+    <div class="service-content"><h3>Hair Styling</h3><p>Beautiful blow-dries, soft curls and elegant hairstyles for every occasion.</p><div class="service-bottom"><span class="price">Rs. 2,000</span><button class="book-service" data-service="Hair Styling">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="hair">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=700&q=85" alt="Hair colour inspiration"><span class="service-tag">Hair studio</span></div>
+    <div class="service-content"><h3>Hair Colour & Care</h3><p>Colour refreshes and conditioning care tailored to your preferred style.</p><div class="service-bottom"><span class="price">Rs. 4,500</span><button class="book-service" data-service="Hair Colour & Care">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="nails">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&q=85" alt="Nail art and manicure"><span class="service-tag">Nail studio</span></div>
+    <div class="service-content"><h3>Manicure & Nail Art</h3><p>Neat nail care, pretty polish and minimalist nail art with a refined finish.</p><div class="service-bottom"><span class="price">Rs. 1,500</span><button class="book-service" data-service="Manicure & Nail Art">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="nails">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=700&q=85" alt="Pedicure and foot care"><span class="service-tag">Nail studio</span></div>
+    <div class="service-content"><h3>Pedicure</h3><p>A relaxing foot-care ritual with nail grooming and a clean, polished finish.</p><div class="service-bottom"><span class="price">Rs. 1,800</span><button class="book-service" data-service="Pedicure">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="body">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=85" alt="Relaxing spa environment"><span class="service-tag">Body & spa</span></div>
+    <div class="service-content"><h3>Relaxing Spa</h3><p>A peaceful self-care experience designed to help you slow down and unwind.</p><div class="service-bottom"><span class="price">Rs. 3,000</span><button class="book-service" data-service="Relaxing Spa">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="body">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=85" alt="Wellness and body care"><span class="service-tag">Body care</span></div>
+    <div class="service-content"><h3>Waxing & Body Care</h3><p>Personal grooming services with attention to comfort and your preferences.</p><div class="service-bottom"><span class="price">Rs. 800</span><button class="book-service" data-service="Waxing & Body Care">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="skin">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=85" alt="Beauty and brow care"><span class="service-tag">Finishing touch</span></div>
+    <div class="service-content"><h3>Threading & Brows</h3><p>Thoughtful brow shaping and threading for a neat, naturally defined finish.</p><div class="service-bottom"><span class="price">Rs. 500</span><button class="book-service" data-service="Threading & Brows">Book treatment ↗</button></div></div>
+   </article>
+   <article class="service reveal" data-category="bridal">
+    <div class="service-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=85" alt="Elegant wedding and bridal inspiration"><span class="service-tag">Bridal studio</span></div>
+    <div class="service-content"><h3>Bridal Makeup</h3><p>A personalised bridal beauty experience for your most memorable celebration.</p><div class="service-bottom"><span class="price">Rs. 18,000</span><button class="book-service" data-service="Bridal Makeup">Book treatment ↗</button></div></div>
+   </article>
+  </div>
+  <p class="small-note">*Prices are illustrative demo prices and should be confirmed with the salon.</p>
+ </div>
+</section>
+
+<div class="promo"><div class="promo-track">
+ <span>Make time for yourself <i class="fa-solid fa-leaf"></i> A softer kind of luxury <i class="fa-regular fa-heart"></i> Your beauty, your way <i class="fa-solid fa-leaf"></i></span>
+ <span>Make time for yourself <i class="fa-solid fa-leaf"></i> A softer kind of luxury <i class="fa-regular fa-heart"></i> Your beauty, your way <i class="fa-solid fa-leaf"></i></span>
+</div></div>
+
+<section class="gallery" id="gallery">
+ <div class="container">
+  <div class="heading reveal"><span class="eyebrow">The Aura edit</span><h2>A glimpse of <em>our world.</em></h2><p>Quiet details, beauty moments and inspiration for your next visit.</p></div>
+  <div class="gallery-grid">
+   <button class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1400&q=90" aria-label="View beauty portrait"><img loading="lazy" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=85" alt="Beauty portrait"></button>
+   <button class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1400&q=90" aria-label="View facial treatment"><img loading="lazy" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=85" alt="Facial treatment"></button>
+   <button class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1400&q=90" aria-label="View nail art"><img loading="lazy" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&q=85" alt="Nail art"></button>
+   <button class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=90" aria-label="View spa ambience"><img loading="lazy" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=85" alt="Spa ambience"></button>
+   <button class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=90" aria-label="View makeup artistry"><img loading="lazy" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85" alt="Makeup artistry"></button>
+   <button class="gallery-item reveal" data-image="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1400&q=90" aria-label="View hair styling"><img loading="lazy" src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=700&q=85" alt="Hair styling"></button>
+  </div>
+ </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image preview">
+ <button id="closeLightbox" aria-label="Close gallery image">&times;</button>
+ <img id="lightboxImage" src="" alt="Selected beauty gallery image">
+</div>
+
+<section class="packages" id="packages">
+ <div class="container">
+  <div class="heading reveal"><span class="eyebrow">Curated for you</span><h2>Your little <em>self-care ritual.</em></h2><p>Choose a beauty moment that suits your day. Packages can be customised to your preferences.</p></div>
+  <div class="package-grid">
+   <article class="package reveal">
+    <div class="package-icon"><i class="fa-solid fa-leaf"></i></div><h3>The Refresh</h3><p>A little reset for your everyday routine.</p>
+    <div class="package-price">Rs. 3,500</div>
+    <ul><li><i class="fa-solid fa-check"></i> Signature facial</li><li><i class="fa-solid fa-check"></i> Brow threading</li><li><i class="fa-solid fa-check"></i> Personal care consultation</li></ul>
+    <a href="#contact" class="btn btn-outline">Choose Package</a>
+   </article>
+   <article class="package featured reveal">
+    <span class="featured-label">Guest favourite</span>
+    <div class="package-icon"><i class="fa-regular fa-heart"></i></div><h3>The Glow</h3><p>A thoughtful combination for your next event.</p>
+    <div class="package-price">Rs. 6,500</div>
+    <ul><li><i class="fa-solid fa-check"></i> Deep skin care</li><li><i class="fa-solid fa-check"></i> Soft glam makeup</li><li><i class="fa-solid fa-check"></i> Hairstyling</li></ul>
+    <a href="#contact" class="btn">Choose Package</a>
+   </article>
+   <article class="package reveal">
+    <div class="package-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>The Bridal Edit</h3><p>A tailored beauty plan for your special day.</p>
+    <div class="package-price">Rs. 18,000<small>+</small></div>
+    <ul><li><i class="fa-solid fa-check"></i> Bridal makeup consultation</li><li><i class="fa-solid fa-check"></i> Occasion makeup</li><li><i class="fa-solid fa-check"></i> Bridal hairstyling</li></ul>
+    <a href="#contact" class="btn btn-outline">Enquire Now</a>
+   </article>
+  </div>
+  <p class="small-note">Package prices are examples for this demo. Confirm final services and pricing with the salon.</p>
+ </div>
+</section>
+
+<section class="reviews" id="reviews">
+ <div class="container">
+  <div class="heading reveal"><span class="eyebrow">Kind words</span><h2>Beauty is personal.<br><em>So is every visit.</em></h2><p>Showcase genuine customer feedback here to help future guests get to know your salon.</p></div>
+  <div class="review-grid">
+   <article class="review reveal"><div class="stars">★★★★★</div><blockquote>“A lovely, peaceful experience. The attention to detail made my visit feel special.”</blockquote><div class="reviewer">Guest review <span>Replace with a verified customer name</span></div></article>
+   <article class="review reveal"><div class="stars">★★★★★</div><blockquote>“I loved how the look was tailored to what I wanted. Everything felt thoughtful.”</blockquote><div class="reviewer">Guest review <span>Replace with a verified customer name</span></div></article>
+   <article class="review reveal"><div class="stars">★★★★★</div><blockquote>“A beautiful space to take a break and enjoy some time for myself.”</blockquote><div class="reviewer">Guest review <span>Replace with a verified customer name</span></div></article>
+  </div>
+  <p class="small-note">These are sample placeholders, not verified customer testimonials.</p>
+ </div>
+</section>
+
+<section class="booking" id="contact">
+ <div class="container booking-grid">
+  <div class="booking-copy reveal">
+   <span class="eyebrow">Your moment starts here</span>
+   <h2>Let's make time<br><em>for you.</em></h2>
+   <p>Ready for a little refresh? Send an appointment request and our team can help you choose the right service and time.</p>
+   <div class="contact-line"><i class="fa-regular fa-clock"></i><div><strong>Opening Hours</strong><span>Monday – Saturday · 10 AM – 8 PM<br>Sunday · By appointment</span></div></div>
+   <div class="contact-line"><i class="fa-solid fa-location-dot"></i><div><strong>Visit Aura</strong><span>Add your salon's address here</span></div></div>
+   <div class="contact-line"><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp Appointments</strong><span>Send your preferred service and date</span></div></div>
+  </div>
+  <form class="booking-form reveal" id="bookingForm">
+   <h3>Request an appointment</h3><p>Share a few details to start your booking enquiry.</p>
+   <div class="form-grid">
+    <div class="field"><label for="name">Your name</label><input id="name" name="name" placeholder="Full name" required></div>
+    <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" placeholder="Your contact number" required></div>
+    <div class="field"><label for="service">Choose a service</label>
+     <select id="service" name="service" required>
+      <option value="">Select service</option><option>Signature Facial</option><option>Deep Skin Care</option><option>Soft Glam Makeup</option><option>Party Makeup</option><option>Hair Styling</option><option>Hair Colour & Care</option><option>Manicure & Nail Art</option><option>Pedicure</option><option>Relaxing Spa</option><option>Waxing & Body Care</option><option>Threading & Brows</option><option>Bridal Makeup</option><option>The Refresh Package</option><option>The Glow Package</option><option>The Bridal Edit</option>
+     </select>
+    </div>
+    <div class="field"><label for="date">Preferred date</label><input id="date" name="date" type="date" required></div>
+    <div class="field full"><label for="message">Anything else? (optional)</label><textarea id="message" name="message" placeholder="Preferred time or any details..."></textarea></div>
+   </div>
+   <button class="btn" type="submit">Continue on WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+   <p class="form-note">Your request opens WhatsApp for you to send. Your booking is not confirmed until the salon replies.</p>
+   <p id="formStatus" aria-live="polite"></p>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div class="footer-brand">
+    <a class="brand" href="#home"><span class="brand-mark" style="border-color:#b5c2ad;color:#e4ebdf">A.</span><span><span class="brand-name">AURA</span><br><span class="brand-sub" style="color:#d1dec9">Beauty Lounge</span></span></a>
+    <p>A thoughtful beauty space where simple details, personal care and timeless elegance come together.</p>
+    <div class="socials"><a href="#contact" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#contact" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#contact" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
+   </div>
+   <div><h3 class="footer-title">Explore</h3><ul class="footer-links"><li><a href="#about">Our Story</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#packages">Packages</a></li></ul></div>
+   <div><h3 class="footer-title">Treatments</h3><ul class="footer-links"><li><a href="#services">Facials & Skin</a></li><li><a href="#services">Makeup</a></li><li><a href="#services">Hair & Nails</a></li><li><a href="#services">Bridal Beauty</a></li></ul></div>
+   <div><h3 class="footer-title">Get in touch</h3><ul class="footer-links"><li>Add salon address</li><li>Add phone number</li><li>Update opening hours</li><li><a href="#contact">Request appointment ↗</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> Aura Beauty Lounge. All rights reserved.</span><span>Designed with care · <a href="#home">Back to top ↑</a></span></div>
+ </div>
+</footer>
+
+<a class="float-wa" id="floatingWhatsApp" href="#" target="_blank" rel="noopener" aria-label="Contact salon on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<button class="backtop" id="backtop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+// IMPORTANT: Replace with the salon's WhatsApp number, including country code.
+// Pakistan example: 923001234567 (no + sign or spaces).
+const SALON_WHATSAPP = "923001234567";
+
+const menu = document.getElementById("menu");
+const navlinks = document.getElementById("navlinks");
+
+menu.addEventListener("click", () => {
+  const open = navlinks.classList.toggle("open");
+  menu.setAttribute("aria-expanded", String(open));
+  menu.innerHTML = open
+    ? '<i class="fa-solid fa-xmark"></i>'
+    : '<i class="fa-solid fa-bars"></i>';
+});
+
+navlinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navlinks.classList.remove("open");
+    menu.setAttribute("aria-expanded", "false");
+    menu.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  });
+});
+
+// Reveal sections as they enter the viewport.
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+// Service category filters.
+document.querySelectorAll(".filter").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
+    const category = button.dataset.filter;
+    document.querySelectorAll(".service").forEach(card => {
+      card.classList.toggle("hidden",
+        category !== "all" && card.dataset.category !== category);
+    });
+  });
+});
+
+// Gallery lightbox.
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+
+document.querySelectorAll(".gallery-item").forEach(button => {
+  button.addEventListener("click", () => {
+    lightboxImage.src = button.dataset.image;
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("closeLightbox").focus();
+  });
+});
+
+function closeGallery() {
+  lightbox.classList.remove("open");
+  document.body.style.overflow = "";
+  lightboxImage.src = "";
+}
+
+document.getElementById("closeLightbox").addEventListener("click", closeGallery);
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox) closeGallery();
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeGallery();
+});
+
+// Clicking a service preselects it in the appointment form.
+document.querySelectorAll(".book-service").forEach(button => {
+  button.addEventListener("click", () => {
+    document.getElementById("service").value = button.dataset.service;
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+// Do not allow selection of past appointment dates.
+const dateInput = document.getElementById("date");
+const localToday = new Date();
+dateInput.min = [
+  localToday.getFullYear(),
+  String(localToday.getMonth() + 1).padStart(2, "0"),
+  String(localToday.getDate()).padStart(2, "0")
+].join("-");
+
+// The form opens WhatsApp with the request. It does not book automatically.
+document.getElementById("bookingForm").addEventListener("submit", e => {
+  e.preventDefault();
+
+  if (SALON_WHATSAPP === "923001234567") {
+    document.getElementById("formStatus").textContent =
+      "Demo number detected. Replace SALON_WHATSAPP in the script with the salon's real WhatsApp number.";
+    return;
+  }
+
+  const data = new FormData(e.currentTarget);
+  const message =
+`Hello Aura Beauty Lounge! I'd like to request an appointment.
+
+Name: ${data.get("name")}
+Phone: ${data.get("phone")}
+Service: ${data.get("service")}
+Preferred date: ${data.get("date")}
+Additional details: ${data.get("message") || "None"}
+
+Please let me know the available time slots. Thank you!`;
+
+  const url = "https://wa.me/" + SALON_WHATSAPP +
+    "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank", "noopener,noreferrer");
+  document.getElementById("formStatus").textContent =
+    "WhatsApp opened. Send the message to submit your request.";
+});
+
+document.getElementById("floatingWhatsApp").addEventListener("click", e => {
+  e.currentTarget.href = "https://wa.me/" + SALON_WHATSAPP +
+    "?text=" + encodeURIComponent("Hello! I'd like to enquire about Aura Beauty Lounge's services and appointments.");
+});
+
+const backtop = document.getElementById("backtop");
+window.addEventListener("scroll", () => {
+  backtop.classList.toggle("show", window.scrollY > 450);
+}, { passive: true });
+backtop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
